@@ -1,27 +1,26 @@
 const canvas = document.getElementById('game');
 const ctx = canvas.getContext('2d');
 
-let score;
-let scoreText;
-let highscore;
-let highscoreText;
 let player;
 let gravity;
 let obstacles = [];
 let gameSpeed;
-let keys = {};
+let keysPressed = {};
+let score;
+let scoreText;
+let highscore;
+let highscoreText;
 
 document.addEventListener('keydown', function(evt) {
-  keys[evt.code] = true;
+  keysPressed[evt.code] = true;
 });
 document.addEventListener('keyup', function(evt) {
-  keys[evt.code] = false;
+  keysPressed[evt.code] = false;
 });
 
 //offline funkcionalita
 window.onload = () => {
   'use strict';
-
   if ('serviceWorker' in navigator && document.URL.split(':')[0] !== 'file') {
     navigator.serviceWorker.register('./service_worker.js');
   }
@@ -48,7 +47,7 @@ class Player {
 
   Animate() {
     //jump
-    if (keys['Space'] || keys['KeyW']) {
+    if (keysPressed['Space'] || keysPressed['KeyW']) {
       if (this.grounded && this.jumpTimer == 0) {
         this.jumpTimer = 1;
         this.dy = -this.jumpForce;
@@ -61,7 +60,7 @@ class Player {
     }
 
     //slide
-    if (keys['ShiftLeft'] || keys['KeyS']) {
+    if (keysPressed['ShiftLeft'] || keysPressed['KeyS']) {
       this.h = this.originalHeight / 2;
     } else {
       this.h = this.originalHeight;
@@ -206,10 +205,9 @@ function Update() {
       spawnTimer = 60;
     }
   }
-
+  //hodenie prekazky na hraca
   for (let i = 0; i < obstacles.length; i++) {
     let o = obstacles[i];
-
     if (o.x + o.w < 0) {
       obstacles.splice(i, 1);
     }
@@ -244,7 +242,6 @@ function Update() {
     highscore = score;
     highscoreText.t = 'High Score: ' + highscore;
   }
-
   highscoreText.Draw();
   gameSpeed += 0.003;
 }
