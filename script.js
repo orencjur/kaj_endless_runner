@@ -51,6 +51,10 @@ class Player {
       if (this.grounded && this.jumpTimer == 0) {
         this.jumpTimer = 1;
         this.dy = -this.jumpForce;
+        let jump = new Audio(
+          'https://stackblitz.com/storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBb2JvIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--14a4bacf2bc02be170da6f6ef8eefb082f5c43ad/smb_jump-small.wav'
+        );
+        jump.play();
       } else if (this.jumpTimer > 0 && this.jumpTimer < 15) {
         this.jumpTimer++;
         this.dy = -this.jumpForce - this.jumpTimer / 50;

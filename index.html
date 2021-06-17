@@ -6,17 +6,6 @@
   </head>
 
   <body>
-    <script>
-      //Jump sounds
-      document.body.onkeypress = function(e) {
-        if (e.keyCode == 32) {
-          let jump = new Audio(
-            'https://stackblitz.com/storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBb2JvIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--14a4bacf2bc02be170da6f6ef8eefb082f5c43ad/smb_jump-small.wav'
-          );
-          jump.play();
-        }
-      };
-    </script>
     <canvas id="game" width="640" height="400"></canvas>
     <div class="tutorial">
       <p>LShift/S - Slide | Space/W - Jump</p>
