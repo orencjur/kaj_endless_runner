@@ -200,6 +200,7 @@ function Update() {
   requestAnimationFrame(Update);
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
+  //hodenie prekazky na hraca
   spawnTimer--;
   if (spawnTimer <= 0) {
     SpawnObstacle();
@@ -209,7 +210,7 @@ function Update() {
       spawnTimer = 60;
     }
   }
-  //hodenie prekazky na hraca
+
   for (let i = 0; i < obstacles.length; i++) {
     let o = obstacles[i];
     if (o.x + o.w < 0) {
