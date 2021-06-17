@@ -10,7 +10,9 @@
       //Jump sounds
       document.body.onkeypress = function(e) {
         if (e.keyCode == 32) {
-          let jump = new Audio('smb_jump-small.wav');
+          let jump = new Audio(
+            'https://stackblitz.com/storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBb2JvIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--14a4bacf2bc02be170da6f6ef8eefb082f5c43ad/smb_jump-small.wav'
+          );
           jump.play();
         }
       };
@@ -25,7 +27,10 @@
     <div id="mood_setter">
       <h3>Play me to be immersed in my creator's exam period ambience</h3>
       <audio controls>
-        <source src="fine.mp3" type="audio/mpeg" />
+        <source
+          src="https://stackblitz.com/storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBb1RvIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--a68487ed1b59cda996570d92475a0f3aa821e2ad/This%20is%20Fine.mp3"
+          type="audio/mpeg"
+        />
         Your browser does not support the audio element.
       </audio>
     </div>

@@ -219,7 +219,9 @@ function Update() {
       player.y < o.y + o.h &&
       player.y + player.h > o.y
     ) {
-      const deathSound = new Audio('smb_bump.wav');
+      const deathSound = new Audio(
+        'https://stackblitz.com/storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBb1hvIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--5f41a0ceec2c7bf9c7bc641a92c3116f0f72e1ef/smb_bump.wav'
+      );
 
       deathSound.play();
       obstacles = [];
